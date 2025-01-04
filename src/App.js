@@ -42,7 +42,6 @@ const App = () => {
                 <Header />
                 <AboutUs />
                 <SpecialMenu />
-                {/* <MenuItem /> */}
                 <Chef />
                 <Intro />
                 <Laurels />

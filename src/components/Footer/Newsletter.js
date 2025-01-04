@@ -8,15 +8,13 @@ const Newsletter = () => {
   const navigate = useNavigate();
 
   const handleSubscribe = () => {
-    const email = document.querySelector('input[type="email"]').value;
-    
-    if (email === 'example@gmail.com') {
+
+    if (email.endsWith('@gmail.com')) {
       navigate('/subscription-thank-you');
     } else {
-      alert('Please use the authorized email "example@gmail.com" to subscribe.');
+      alert('Please use a Gmail address to subscribe.');
     }
   };
-  
 
   return (
     <div className="app__newsletter">
