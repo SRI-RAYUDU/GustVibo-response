@@ -1,0 +1,15 @@
+.thank-you {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .thank-you h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .thank-you p {
+    font-size: 18px;
+    color: #555;
+  }
+  

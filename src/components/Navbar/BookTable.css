@@ -1,0 +1,44 @@
+.bookTable {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bookTable h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tables__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.table {
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+
+.table.empty {
+  background-color: grey;
+}
+
+.table.red-slotted {
+  background-color: red;
+}
+
+.table.green-slotted {
+  background-color: green;
+}
+
+.table:hover {
+  transform: scale(1.05);
+}

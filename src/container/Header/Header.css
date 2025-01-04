@@ -1,0 +1,28 @@
+.app__header {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding-top: 100px;
+  }
+  
+  .app__header-h1 {
+    font-family: var(--font-base);
+    color: var(--color-golden);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 117px;
+    font-size: 90px;
+  }
+  
+  #home .custom__button {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    height:50px;
+    width:150px;
+  }
+  
