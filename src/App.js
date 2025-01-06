@@ -47,7 +47,6 @@ const App = () => {
                 <Laurels />
                 <Gallery />
                 <FindUs />
-                <Footer />
               </>
             }
           />
@@ -55,7 +54,7 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/awards" element={<Laurels />} />
-          <Route path="/contact" element={<FindUs />} /> 
+          <Route path="/contact" element={<FindUs />} />
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/thank-you" element={<ThankYou />} />
@@ -63,6 +62,7 @@ const App = () => {
           <Route path="/BookTable" element={<BookTable />} />
           <Route path="/userdetails/:tableId" element={<UserDetails />} />
         </Routes>
+        <Footer /> 
       </div>
     </Router>
   );

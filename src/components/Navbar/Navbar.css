@@ -42,15 +42,30 @@
   justify-content: flex-end;
   align-items: center;
 }
+.app__navbar-login .logout-btn {
+  border-radius: 8px; 
+  padding: 8px 16px;
+  background-color: #e74c3c; 
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.app__navbar-login .logout-btn:hover {
+  background-color: #c0392b; 
+}
+
 
 .app__navbar a {
   color: var(--color-white);
   text-decoration: none;
-  transition: 0.3s ease; 
+  transition: 0.3s ease;
 }
 
 .app__navbar a:hover {
-  color: var(--color-grey); 
+  color: var(--color-grey);
 }
 
 .app__navbar-login a {
@@ -58,7 +73,6 @@
   font-size: 1rem;
   font-weight: 250;
 }
-
 
 .app__navbar-login div {
   width: 1px;

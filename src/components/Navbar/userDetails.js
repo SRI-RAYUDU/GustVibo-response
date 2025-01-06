@@ -14,7 +14,6 @@ const UserDetails = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
     if (phone.length !== 10) {
       setError('Phone number must be 10 digits.');
       return;
@@ -30,26 +29,25 @@ const UserDetails = () => {
 
     localStorage.setItem('userDetails', JSON.stringify(userDetails));
 
-
     setIsBooked(true);
     setError('');
     setName('');
     setEmail('');
     setPhone('');
 
- 
+    
     setTimeout(() => {
-      alert(`Successfully booked Table ${tableId}! One of our members will get back to you shortly.`);
       navigate('/'); 
-    }, 2000);
+    }, 4000);
   };
 
   return (
     <div className="userdetails">
       {isBooked ? (
         <div className="confirmation-message">
-          <h2>Successfully Booked!</h2>
-          <p>One of our members will get back to you shortly.</p>
+          <span className="checkmark">&#10003;</span>
+          <h2>Table {tableId} Successfully Booked!</h2>
+          <p>Your reservation is confirmed. Our team will contact you soon.</p>
         </div>
       ) : (
         <div>
@@ -79,7 +77,7 @@ const UserDetails = () => {
                 type="text"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                maxLength="10" // Limit phone input to 10 digits
+                maxLength="10"
                 required
               />
             </div>

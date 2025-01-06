@@ -1,6 +1,8 @@
 .menu-page {
   padding: 20px;
   font-family: 'Arial', sans-serif;
+  background-color: #FF6347; 
+  color: white;
 }
 
 .menu-items {
@@ -11,7 +13,7 @@
 }
 
 .menu-item {
-  background-color: #f8f8f8;
+  background-color: #ffffff; 
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -38,9 +40,15 @@
   margin: 10px 0;
 }
 
+.menu-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
 .menu-price {
   font-size: 18px;
-  color: #e74c3c;
+  color: #e74c3c; 
   font-weight: 600;
 }
 

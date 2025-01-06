@@ -1,28 +1,84 @@
 .signup-page {
-    width: 300px;
-    margin: 0 auto;
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #2c3e50; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  text-align: center;
+}
+
+.signup-page h2 {
+  color: #f39c12; 
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+}
+
+.signup-page input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.signup-page input:focus {
+  border-color: #f39c12; 
+}
+
+.signup-page button {
+  padding: 12px;
+  width: 95%;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.signup-page button:hover {
+  background-color: #e67e22; 
+}
+
+.signup-page p {
+  margin-top: 15px;
+  color: white;
+  font-size: 14px;
+}
+
+.signup-page a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+.signup-page a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+  .signup-page {
+    width: 90%;
     padding: 20px;
-    text-align: center;
   }
- h2{
-    color:white
+
+  .signup-page h2 {
+    font-size: 20px;
   }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+
+  .signup-page button {
+    font-size: 14px;
   }
-  
-  button {
-    padding: 10px;
-    width: 100%;
-    background-color: #28a745;
-    color: white;
-    border: none;
-  }
-  
-  p {
-    margin-top: 10px;
-  }
-  
+}

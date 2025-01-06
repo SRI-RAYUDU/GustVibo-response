@@ -1,22 +1,30 @@
-.userdetails {
-  width: 350px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+body {
+  background-color: #3d353c;  
   font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.userdetails {
+  width: 400px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;  
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  text-align: center;
   color: #333;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 26px;
+  margin-bottom: 25px;
+  text-align: center; 
 }
 
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .input-group label {
@@ -29,9 +37,9 @@ h2 {
 
 .input-group input {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 14px;
   transition: border-color 0.3s ease;
 }
@@ -43,11 +51,11 @@ h2 {
 
 .submit-button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background-color: #28a745;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -62,10 +70,17 @@ h2 {
   background-color: #1e7e34;
 }
 
-@media (max-width: 400px) {
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+
+@media (max-width: 450px) {
   .userdetails {
     width: 90%;
-    padding: 20px;
+    padding: 30px;
   }
   .submit-button {
     font-size: 14px;
@@ -74,30 +89,41 @@ h2 {
 
 .confirmation-message {
   background-color: #d4edda;
-  border: 1px solid #c3e6cb; 
-  color: #155724; 
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  font-size: 18px;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-size: 24px;
   font-weight: 600;
+  text-align: center;
 }
 
 .confirmation-message h2 {
-  margin-bottom: 10px;
-  font-size: 24px;
+  margin-bottom: 20px;
+  font-size: 32px;
   color: #155724;
 }
 
 .confirmation-message p {
-  margin:10px;
-  font-size: 16px;
+  font-size: 20px;
   color: #155724;
 }
 
-@media (max-width: 400px) {
+.checkmark {
+  font-size: 50px;
+  color: #28a745;
+  display: block;
+  margin-bottom: 20px;
+}
+
+
+@media (max-width: 450px) {
   .confirmation-message {
-    font-size: 16px;
+    font-size: 20px;
+    padding: 30px;
+  }
+  .checkmark {
+    font-size: 40px;
   }
 }
