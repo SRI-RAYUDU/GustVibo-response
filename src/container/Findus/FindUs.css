@@ -1,4 +1,4 @@
-/* General styles */
+
 .app__wrapper_info {
     z-index: 1;
   }
@@ -13,7 +13,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Dark overlay for contrast */
+    background: rgba(0, 0, 0, 0.7); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,18 +22,18 @@
   
   .message-container {
     text-align: center;
-    background: #333; /* Dark background for professional look */
+    background: #333; 
     padding: 2rem 3rem;
     border-radius: 10px;
-    max-width: 500px; /* Slightly wider container for better look */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
   .message {
     font-size: 24px;
     font-family: 'Arial', sans-serif;
     font-weight: 600;
-    color: white; /* Pure white text color */
+    color: white;
     letter-spacing: 0.05em;
     font-style: italic;
   }

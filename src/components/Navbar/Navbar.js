@@ -4,7 +4,7 @@ import { MdOutlineRestaurantMenu } from 'react-icons/md';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../../Images/logo.png'
+import logo from '../../Images/logo.png';
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -12,8 +12,8 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
   const handleLogout = () => {
     localStorage.removeItem('user');
-    setIsLoggedIn(false); 
-    navigate('/'); 
+    setIsLoggedIn(false);
+    navigate('/');
   };
 
   return (
@@ -38,8 +38,8 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
       <div className="app__navbar-login">
         {isLoggedIn ? (
           <>
+            <FaRegUserCircle className="user-icon" fontSize={20} style={{ color: 'white', marginRight: '10px' }} />
             <button onClick={handleLogout} className="logout-btn">Logout</button>
-            <FaRegUserCircle className="user-icon" fontSize={20} />
           </>
         ) : (
           <>

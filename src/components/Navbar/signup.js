@@ -11,7 +11,6 @@ const Signup = () => {
   const [errorEmail, setErrorEmail] = useState('');
   const [errorPassword, setErrorPassword] = useState('');
   const [errorNumber, setErrorNumber] = useState('');
-  const [warningNumber, setWarningNumber] = useState('');
   const navigate = useNavigate();
 
   const validateEmail = (email) => {
@@ -26,8 +25,7 @@ const Signup = () => {
 
   const validateNumber = (num) => {
     const numberRegex = /^[1-9][0-9]{9}$/;
-    const hasRepeatingDigits = /(\d)\1{2,}/.test(num);
-    return numberRegex.test(num) && !hasRepeatingDigits;
+    return numberRegex.test(num);
   };
 
   const validateName = (name) => {
@@ -62,17 +60,14 @@ const Signup = () => {
       );
     }
 
-    if (number && !validateNumber(number)) {
-      valid = false;
-      setErrorNumber(
-        'Number must be valid, contain 10 digits, and cannot have repeating digits.'
-      );
-    }
-
-    if (number && number.length > 0 && number.length < 10) {
-      setWarningNumber('Number must be at least 10 digits.');
-    } else {
-      setWarningNumber('');
+    if (number) {
+      if (!validateNumber(number)) {
+        valid = false;
+        setErrorNumber('Number must be exactly 10 digits and cannot have leading zeros.');
+      } else if (number.length !== 10) {
+        valid = false;
+        setErrorNumber('Number must be exactly 10 digits.');
+      }
     }
 
     if (valid) {
@@ -132,10 +127,8 @@ const Signup = () => {
           onChange={(e) => {
             setNumber(e.target.value);
             setErrorNumber('');
-            setWarningNumber('');
           }}
         />
-        {warningNumber && <p className="warning-message">{warningNumber}</p>}
         {errorNumber && <p className="error-message">{errorNumber}</p>}
       </div>
       <button onClick={handleSignup}>Signup</button>
