@@ -3,7 +3,7 @@ import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
 import FooterOverlay from '../../components/Footer/FooterOverlay';
 import Newsletter from '../../components/Footer/Newsletter';
 import './Footer.css';
-import { images } from '../../constants';
+// import {Images } from '../../constants';
 
 const Footer = () => (
   <div className="app__footer section__padding" id="login">

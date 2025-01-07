@@ -2,14 +2,14 @@
   width: 400px;
   margin: 50px auto;
   padding: 30px;
-  background-color: #2c3e50; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  background-color: #2c3e50;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
 .signup-page h2 {
-  color: #f39c12; 
+  color: #f39c12;
   margin-bottom: 20px;
   font-family: 'Arial', sans-serif;
   font-size: 24px;
@@ -27,7 +27,7 @@
 }
 
 .signup-page input:focus {
-  border-color: #f39c12; 
+  border-color: #f39c12;
 }
 
 .signup-page button {
@@ -44,7 +44,7 @@
 }
 
 .signup-page button:hover {
-  background-color: #e67e22; 
+  background-color: #e67e22;
 }
 
 .signup-page p {
@@ -66,6 +66,18 @@
   color: #e74c3c;
   font-size: 14px;
   margin-bottom: 10px;
+  text-align: left;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.warning-message {
+  color: #f1c40f;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: left;
+  width: 90%;
+  margin: 10px auto;
 }
 
 @media (max-width: 480px) {

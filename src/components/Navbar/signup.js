@@ -7,98 +7,137 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [number, setNumber] = useState('');
-  const [error, setError] = useState('');
+  const [errorName, setErrorName] = useState('');
+  const [errorEmail, setErrorEmail] = useState('');
+  const [errorPassword, setErrorPassword] = useState('');
+  const [errorNumber, setErrorNumber] = useState('');
+  const [warningNumber, setWarningNumber] = useState('');
   const navigate = useNavigate();
-
 
   const validateEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
   };
 
-
-  const validateNumber = (num) => {
-    const numberRegex = /^[1-9][0-9]{9}$/; 
-    return numberRegex.test(num);
+  const validatePassword = (password) => {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    return passwordRegex.test(password);
   };
 
+  const validateNumber = (num) => {
+    const numberRegex = /^[1-9][0-9]{9}$/;
+    const hasRepeatingDigits = /(\d)\1{2,}/.test(num);
+    return numberRegex.test(num) && !hasRepeatingDigits;
+  };
 
   const validateName = (name) => {
-    const nameRegex = /^[A-Za-z\s]+$/; 
-    return nameRegex.test(name);
+    return name.length >= 5;
   };
 
   const handleSignup = () => {
+    let valid = true;
+
     if (!name || !email || !password || !number) {
-      setError('All fields are required.');
-      return;
+      valid = false;
+      if (!name) setErrorName('Name is required.');
+      if (!email) setErrorEmail('Email is required.');
+      if (!password) setErrorPassword('Password is required.');
+      if (!number) setErrorNumber('Number is required.');
     }
 
-
-    if (!validateName(name)) {
-      setError('Name can only contain alphabets and spaces.');
-      return;
+    if (name && !validateName(name)) {
+      valid = false;
+      setErrorName('Name must be at least 5 characters.');
     }
 
-    if (!validateEmail(email)) {
-      setError('Please enter a valid email.');
-      return;
+    if (email && !validateEmail(email)) {
+      valid = false;
+      setErrorEmail('Please enter a valid email.');
     }
 
-
-    if (!validateNumber(number)) {
-      setError('Number must be 10 digits and cannot start with 0.');
-      return;
+    if (password && !validatePassword(password)) {
+      valid = false;
+      setErrorPassword(
+        'Password must be at least 8 characters and contain both letters and numbers.'
+      );
     }
 
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const newUser = { name, email, password, number };
-    users.push(newUser);
-    localStorage.setItem('users', JSON.stringify(users));
-    alert('Signup successful. You can now login.');
-    navigate('/Login');
+    if (number && !validateNumber(number)) {
+      valid = false;
+      setErrorNumber(
+        'Number must be valid, contain 10 digits, and cannot have repeating digits.'
+      );
+    }
+
+    if (number && number.length > 0 && number.length < 10) {
+      setWarningNumber('Number must be at least 10 digits.');
+    } else {
+      setWarningNumber('');
+    }
+
+    if (valid) {
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const newUser = { name, email, password, number };
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+
+      navigate('/Login');
+    }
   };
 
   return (
     <div className="signup-page">
       <h2>Signup</h2>
-      {error && <p className="error-message">{error}</p>}
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => {
-          setName(e.target.value);
-          setError('');
-        }}
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-          setError('');
-        }}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-          setError('');
-        }}
-      />
-      <input
-        type="text"
-        placeholder="Number"
-        value={number}
-        onChange={(e) => {
-          setNumber(e.target.value);
-          setError('');
-        }}
-      />
+      <div>
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+            setErrorName('');
+          }}
+        />
+        {errorName && <p className="error-message">{errorName}</p>}
+      </div>
+      <div>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setErrorEmail('');
+          }}
+        />
+        {errorEmail && <p className="error-message">{errorEmail}</p>}
+      </div>
+      <div>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setErrorPassword('');
+          }}
+        />
+        {errorPassword && <p className="error-message">{errorPassword}</p>}
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="Number"
+          value={number}
+          onChange={(e) => {
+            setNumber(e.target.value);
+            setErrorNumber('');
+            setWarningNumber('');
+          }}
+        />
+        {warningNumber && <p className="warning-message">{warningNumber}</p>}
+        {errorNumber && <p className="error-message">{errorNumber}</p>}
+      </div>
       <button onClick={handleSignup}>Signup</button>
       <p>
         Already have an account? <a href="/login">Login</a>

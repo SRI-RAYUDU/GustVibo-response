@@ -8,6 +8,20 @@ const Login = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    if (!email.trim()) {
+      alert('Email is required');
+      setEmail('');
+      setPassword('');
+      return;
+    }
+
+    if (!email.endsWith('@gmail.com')) {
+      alert('Email must end with @gmail.com');
+      setEmail('');
+      setPassword('');
+      return;
+    }
+
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users.find(
       (u) => u.email === email && u.password === password
@@ -19,6 +33,8 @@ const Login = ({ setIsLoggedIn }) => {
       navigate('/'); 
     } else {
       alert('Invalid credentials');
+      setEmail('');
+      setPassword('');
     }
   };
 
@@ -30,6 +46,7 @@ const Login = ({ setIsLoggedIn }) => {
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        required
       />
       <input
         type="password"
