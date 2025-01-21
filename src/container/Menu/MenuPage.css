@@ -1,8 +1,9 @@
 .menu-page {
-  padding: 20px;
+  padding: 30px;
   font-family: 'Arial', sans-serif;
-  background-color: #FF6347; 
-  color: white;
+  background-color: #8B0000;
+  color: #FFD700;
+  text-align: center;
 }
 
 .menu-items {
@@ -13,18 +14,19 @@
 }
 
 .menu-item {
-  background-color: #ffffff; 
-  border-radius: 8px;
+  background-color: #fff0e1; 
+  border-radius: 10px; 
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
   text-align: center;
-  width: calc(33.33% - 20px); 
-  padding: 15px;
-  transition: transform 0.3s ease;
+  width: calc(25% - 15px); 
+  padding: 12px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-item:hover {
-  transform: translateY(-10px);
+  transform: scale(1.05); 
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
 .menu-item img {
@@ -34,23 +36,24 @@
 }
 
 .menu-name {
-  font-size: 18px;
+  font-size: 16px; 
   font-weight: bold;
-  color: #333;
-  margin: 10px 0;
+  color: #5A2E2E;
+  margin: 8px 0;
 }
 
 .menu-description {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 8px;
 }
 
 .menu-price {
-  font-size: 18px;
-  color: #e74c3c; 
-  font-weight: 600;
+  font-size: 16px; 
+  color: #B22222; 
+  font-weight: 700;
 }
+
 
 @media screen and (max-width: 1150px) {
   .menu-items {
@@ -58,25 +61,20 @@
   }
 
   .menu-item {
-    flex-basis: calc(50% - 20px); 
+    flex-basis: calc(33.33% - 15px); 
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
   .menu-item {
-    flex-basis: calc(100% - 20px);
-  }
-
-  .menu-item img {
-    width: 100%;
-    height: auto;
+    flex-basis: calc(100% - 20px); 
   }
 
   .menu-name {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .menu-price {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

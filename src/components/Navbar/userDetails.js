@@ -4,11 +4,11 @@ import './userDetails.css';
 
 const UserDetails = () => {
   const { tableId } = useParams();
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [isBooked, setIsBooked] = useState(false); 
+  const [isBooked, setIsBooked] = useState(false);
   const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
@@ -24,10 +24,15 @@ const UserDetails = () => {
       name,
       email,
       phone,
-      status: 'pending',
+      status: 'confirmed',
+      bookedAt: new Date().toISOString(),
     };
 
-    localStorage.setItem('userDetails', JSON.stringify(userDetails));
+
+    localStorage.setItem('successfullyBooked', true);
+
+
+    localStorage.setItem(`user_table_${tableId}`, JSON.stringify(userDetails));
 
     setIsBooked(true);
     setError('');
@@ -35,9 +40,8 @@ const UserDetails = () => {
     setEmail('');
     setPhone('');
 
-    
     setTimeout(() => {
-      navigate('/'); 
+      navigate('/');
     }, 4000);
   };
 
@@ -81,7 +85,7 @@ const UserDetails = () => {
                 required
               />
             </div>
-            {error && <p className="error-message">{error}</p>} 
+            {error && <p className="error-message">{error}</p>}
             <button type="submit" className="submit-button">Confirm Booking</button>
           </form>
         </div>

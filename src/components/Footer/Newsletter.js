@@ -11,7 +11,8 @@ const Newsletter = () => {
   const handleSubscribe = () => {
     if (email.endsWith('@gmail.com')) {
       setError('');
-      navigate('/subscription-thank-you');
+      window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      navigate('/subscription-thank-you'); 
     } else {
       setError('Please use a valid Gmail address to subscribe.');
     }
@@ -31,7 +32,7 @@ const Newsletter = () => {
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
-            setError(''); 
+            setError('');
           }}
           required
           className={error ? 'error-input' : ''}
